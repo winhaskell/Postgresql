@@ -1,0 +1,11 @@
+ALTER TABLE order_details ADD order_date date;
+
+
+CREATE TABLE company(id VARCHAR(6), name VARCHAR(32), age VARCHAR(4), address VARCHAR(64),salary VARCHAR(8));
+
+CREATE TABLE phonebook(phone VARCHAR(32), firstname VARCHAR(16), lastname VARCHAR(16), address VARCHAR(64));
+
+
+postgres=# ALTER TABLE company ADD JOIN_DATE date;
+ALTER TABLE
+postgres=# 
