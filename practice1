@@ -1,5 +1,5 @@
 ALTER TABLE order_details ADD order_date date;
-
+ALTER TABLE order_details DROP COLUMN notes;
 
 CREATE TABLE company(id VARCHAR(6), name VARCHAR(32), age VARCHAR(4), address VARCHAR(64),salary VARCHAR(8));
 
@@ -9,3 +9,42 @@ CREATE TABLE phonebook(phone VARCHAR(32), firstname VARCHAR(16), lastname VARCHA
 postgres=# ALTER TABLE company ADD JOIN_DATE date;
 ALTER TABLE
 postgres=# 
+
+
+
+postgres=# UPDATE COMPANY SET ADDRESS = 'Texas', SALARY=20000;
+UPDATE 5
+postgres=# select * from company;
+ id | name  | age |                      address                       | salary | join_date  
+----+-------+-----+----------------------------------------------------+--------+------------
+  1 | Paul  |  32 | Texas                                              |  20000 | 2001-07-13
+  2 | Allen |  25 | Texas                                              |  20000 | 2007-12-14
+  3 | Teddy |  38 | Texas                                              |  20000 | 2020-02-24
+  4 | Mark  |  35 | Texas                                              |  20000 | 2018-02-28
+  5 | David |  47 | Texas                                              |  20000 | 2019-05-21
+(5 rows)
+
+
+UPDATE table_name SET column1 = value1, column2 = value2...., columnN = valueN WHERE [condition];
+
+INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)
+VALUES (value1, value2, value3,...valueN);
+
+
+
+postgres=# select * from company;
+ 
+id | name  | age |                      address                       | salary | join_date  
+----+-------+-----+----------------------------------------------------+--------+------------
+  1 | Paul  |  32 | Boston                                             |  20000 | 2018-06-12
+  2 | Allen |  25 | Texas                                              |  16000 | 2007-12-14
+  3 | Teddy |  38 | Boston                                             |  15000 | 2020-02-24
+  4 | Mark  |  35 | Texas                                              |  22000 | 2018-02-28
+  5 | David |  47 | Boston                                             |  20000 | 2019-05-21
+(5 rows)
+
+
+
+
+
+
